@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.trip.planner.dao.IDao">
+   <!--최태란 여행정보-->
+   <select id="list" resultType="com.trip.planner.dto.TR_Dto"> SELECT * FROM EM WHERE E_NAME=#{param1} </select>
+   <!--최정민 q&a-->      
+   <select id="content_view" resultType="com.trip.planner.dto.QDto"> SELECT * FROM T_QNA WHERE Q_ID=#{param1} </select>
+
+   <select id="comment" resultType="com.trip.planner.dto.QDto_C"> SELECT * FROM T_QNA_C WHERE Q_ID=#{param1} </select>
+
+   <insert id="write"> INSERT INTO T_QNA (T_ID, Q_TITLE, Q_CONTENT, Q_HIT) VALUES (#{param1}, #{param2}, #{param3}, 0) </insert>
+
+   <insert id="comment_write"> INSERT INTO T_QNA_C (Q_ID, T_ID, C_COMMENT) VALUES (#{param1},#{param2},#{param3}) </insert>
+
+   <select id="listCnt" resultType="int"> SELECT COUNT(*) FROM T_QNA </select>
+
+   <select id="PageDao" resultType="com.trip.planner.dto.QDto"> SELECT * FROM (SELECT * FROM (SELECT @rownum:=@rownum+1 AS RN, B.* FROM T_QNA B, (select @rownum:=0) TMP  ORDER BY B.Q_ID DESC) A) C WHERE RN BETWEEN #{start} AND #{end} </select>
+   
+   <select id="hitPlus" resultType="int">UPDATE T_QNA SET Q_HIT=Q_HIT+1 WHERE Q_ID=#{param1} </select>
+   
+   <select id="myQnaCnt" resultType="int"> 
+		SELECT COUNT(*) FROM T_QNA WHERE T_ID=#{PARAM1}
+	</select>
+	
+	<select id="myQna" resultType="com.trip.planner.dto.QDto"> 
+		SELECT * FROM (
+			SELECT * FROM (
+				SELECT @rownum:=@rownum+1 AS RN, B.* 
+				FROM T_QNA B, (select @rownum:=0) TMP
+				WHERE T_ID=#{PARAM1}  
+				ORDER BY B.Q_ID DESC) A) C 
+		WHERE RN BETWEEN #{start} AND #{end} 
+	</select>
+   
+   <!-- 고이준 -->   
+    <select id="ij_show_my_plan" resultType="com.trip.planner.dto.PDto"> 
+    SELECT T_ID, MY_NAME, MY_START, MY_ID, MY_CITY FROM T_MYPLAN WHERE T_ID=#{param1} 
+    </select>
+    
+    <select id="ij_get_tid" resultType="String"> 
+    SELECT T_ID FROM T_MEMBER WHERE M_ID=#{param1} 
+    </select>
+    
+    <insert id="ij_save_my_plan" > 
+    INSERT INTO T_MYPLAN VALUES (get_seq('T_MYPLAN_SEQ'),  #{param1}, #{param2}, #{param3}, #{param4},#{param5})  
+    </insert>
+    
+    <delete id="ij_delete_my_plan" > 
+    DELETE FROM  T_MYPLAN WHERE MY_ID= #{param1}
+    </delete>
+   
+   <select id="ij_show_day_plan" resultType="com.trip.planner.dto.PDto"> 
+    SELECT * FROM T_MYPLAN WHERE MY_ID=#{param1} 
+    </select>
+    
+    <insert id="ij_sign_up" > 
+    INSERT INTO T_MEMBER VALUES (get_seq('T_MEMBER_SEQ'), #{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}, #{param7}, #{param8})  
+    </insert>
+    
+    <insert id="ij_sign_update" > 
+    UPDATE  T_MEMBER SET M_PW=#{param2}, M_NAME=#{param3}, M_GENDER=#{param4}, M_BIR=#{param5}, M_MOB=#{param6}, M_EMAIL=#{param7}, M_ADD=#{param8} WHERE M_ID=#{param1}
+    </insert>
+    
+    <select id="ij_id_check" resultType="com.trip.planner.dto.MDto"> 
+    SELECT * FROM T_MEMBER WHERE M_ID=#{param1} 
+    </select>
+    <select id="ij_login" resultType="com.trip.planner.dto.MDto"> 
+    SELECT * FROM T_MEMBER WHERE M_ID=#{param1} AND M_PW=#{param2}
+    </select>
+    <update id="ij_update_my_plan" > 
+    UPDATE T_MYPLAN SET   T_ID=#{param1}, MY_NAME=#{param2}, MY_START=#{param3}, MY_CITY=#{param4}, MY_PLACE=#{param5} WHERE MY_ID=#{param6} 
+    </update>
+   <!-- 안하정 -->
+   <select id="hj_yplan" resultType="com.trip.planner.dto.PDto">
+   SELECT A.T_ID T_ID, A.MY_ID MY_ID, A.MY_START MY_START,A.MY_NAME MY_NAME,A.MY_CITY MY_CITY,B.M_ID MY_PLACE,(SELECT E_IMG FROM EM WHERE E_NAME=A.MY_CITY) CITY FROM T_MYPLAN A, T_MEMBER B WHERE A.T_ID=B.T_ID
+   </select>
+   <select id="hj_yplan2" resultType="String">
+   SELECT E_IMG FROM EM WHERE E_NAME=#{param1}
+   </select>
+   <insert id="review_submit">
+   INSERT INTO T_YPLAN VALUES (#{param1}, #{param2}, #{param3}, NOW(), #{param4})
+   </insert>
+   <select id="review_list" resultType="com.trip.planner.dto.YDto"> 
+    SELECT * FROM T_YPLAN WHERE MY_ID=#{param1} 
+    </select>
+    <select id="ij_show_photo" resultType="String"> 
+   SELECT E_IMG FROM EM ORDER BY RAND() LIMIT 1
+   </select>
+   
+   <select resultType="int" id="yplan_listCnt"> 
+   SELECT COUNT(*) FROM T_YPLAN
+   </select>
+
+   <select resultType="com.trip.planner.dto.PDto" id="yplanpaging_Dao"> 
+   SELECT * FROM (SELECT @rownum:=@rownum+1 AS RN, C.* FROM (SELECT A.T_ID T_ID, A.MY_ID MY_ID, A.MY_START MY_START,A.MY_NAME MY_NAME,A.MY_CITY MY_CITY,B.M_ID MY_PLACE,(SELECT D.E_IMG FROM EM D WHERE D.E_NAME=A.MY_CITY) CITY FROM T_MYPLAN A, human.T_MEMBER B, (select @rownum:=0) TMP WHERE A.T_ID=B.T_ID ORDER BY A.T_ID DESC) C) E WHERE RN BETWEEN #{start}  AND #{end}
+   </select>
+   
+   <insert id="hj_yplan_clip">
+   INSERT INTO T_CLIPPLAN VALUES(#{param1}, #{param2})
+   </insert>
+   
+   <select id="ij_show_my_plan2" resultType="com.trip.planner.dto.PDto">
+   SELECT * FROM T_CLIPPLAN C, (SELECT A.T_ID T_ID, A.MY_ID MY_ID, A.MY_START MY_START,A.MY_NAME MY_NAME,A.MY_CITY MY_CITY,B.M_ID MY_PLACE,(SELECT E_IMG FROM EM WHERE E_NAME=A.MY_CITY) CITY FROM T_MYPLAN A, T_MEMBER B WHERE A.T_ID=B.T_ID) D WHERE C.MY_ID=D.MY_ID AND C.T_ID=#{param1}
+   </select>
+   
+   <delete id="hj_delete_clip" > 
+    DELETE FROM T_CLIPPLAN WHERE MY_ID= #{param1} AND T_ID=#{param2}
+    </delete>
+
+</mapper>

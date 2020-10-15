@@ -1,0 +1,692 @@
+
+      body {
+          margin-left:0;
+          margin-right:0;
+      }
+
+      .narvar{
+        margin:0;
+        width:100%;
+        height:40px;
+        background-color:rgb(70, 70, 129);
+      }
+     .mainlogo{
+       position:absolute;
+       margin-left:-50px;
+       top:8%;
+     }
+     .hj_m1{
+        background-color: none;
+        border: white;
+        font-size: 35px;
+        list-style: none;
+        float: left;
+        font-family: 'Bebas Neue', cursive;
+        padding-left:20px;
+    }
+    .hj_m1>a{
+        color: black;
+        text-decoration: none;
+    }
+    .hj_m2{
+        font-size: 18px;
+        list-style: none;
+        float: left;
+        color: black;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        padding-left:70px;
+        text-align:center;
+      
+       
+   
+       
+      
+        
+    }
+    .hj_m2>a{
+        color: black;
+        text-decoration: none;
+    }
+
+    
+    #log{
+       float: right;
+    }
+    #hj_slide_div *{
+        margin:0;padding:0;
+        width:100%; height:500px;
+    }
+    .hj_phoslide {
+        position: relative; margin:0 auto; padding:0; overflow: hidden;width:100%;height:100%;
+    }
+   .hj_phoslide ul {
+        position: absolute; margin: 0; padding:0; list-style: none;  transition:1s;
+    }
+   .hj_phoslide ul li {
+        margin:0; padding:0; width:100%;height:100%;
+    }
+
+
+    /*메인 이미지 시작*/
+    .slider1 {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .s2{
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+     .swiper-button-prev{
+     color:black;
+   }
+     .swiper-button-next{
+     color:black;
+   }
+ .swiper-pagination-bullet-active{
+     color:black;
+   }
+    
+    .sd1{
+     position:relative;
+
+   }
+   .h1{
+    position:absolute;
+    top:35%;
+    left:37%;
+    opacity:0.5;
+    font-size:50px;
+   font-family: 'Nanum Pen Script', cursive;
+
+    }
+
+    .h2{
+    position:absolute;
+    top:10%;
+    left:5%;
+    font-size:40px;
+ font-family: 'Jua', sans-serif;
+
+    }
+     .h2jeju {
+    position:absolute;
+    top:20%;
+    left:5%;
+    font-size:40px;
+    color:green;
+    font-family: 'Jua', sans-serif;
+
+    }
+     .h3{
+    position:absolute;
+    top:20%;
+    left:15%;
+    font-size:40px;
+ font-family: 'Jua', sans-serif;
+
+    }
+    .h3bangkok{
+    position:absolute;
+    top:32%;
+    left:15%;
+    font-size:40px;
+    color:orange;
+    font-family: 'Jua', sans-serif;
+    
+   }
+    /*.slider{
+     marign:0;
+   }*/
+
+    .h4{
+    position:absolute;
+    top:30%;
+    left:20%;
+    font-size:40px;
+    font-family: 'Jua', sans-serif;
+
+    
+   }
+     .h4paris{
+    position:absolute;
+    top:40%;
+    left:20%;
+    font-size:40px;
+    color:gray;
+    font-family: 'Jua', sans-serif;
+
+    
+   }
+     .h5{
+    position:absolute;
+    top:10%;
+    left:10%;
+    font-size:40px;
+    font-family: 'Jua', sans-serif;
+    }
+    .h5venice{
+     position:absolute;
+    top:11%;
+    left:25%;
+    color:yellow;
+    font-size:40px;
+    font-family: 'Jua', sans-serif;
+    
+   }
+    .h6{
+    position:absolute;
+    top:0%;
+    left:5%;
+    font-size:40px;
+    font-family: 'Jua', sans-serif;
+    }
+     .h6london{
+    position:absolute;
+    top:10%;
+    left:5%;
+    color:white;
+    font-size:40px;
+    font-family: 'Jua', sans-serif;
+    }
+
+    .h7{
+    position:absolute;
+    top:42%;
+    left:10%;
+    font-size:40px;
+    font-family: 'Jua', sans-serif;
+    }
+    .h7Santorini{
+     position:absolute;
+    top:52%;
+    left:10%;
+    color:pink;
+    font-size:40px;
+    font-family: 'Jua', sans-serif;
+    }
+
+  /*여행계획을 세워 여행을 떠나요*/
+  .planner1{
+    position:relative;
+    width=100%;
+    
+  }
+  
+    .titmain{
+     position:absolute;
+     top:100%;
+     margin-left:18%
+    
+     
+   
+
+   }
+   .plannertit{
+     font-size:30px;
+     font-family: 'Poor Story';
+     margin-bottom:15px;
+   }
+   .tittext{
+    float:left;
+    width:350px;
+    text-align: center;
+   background-color:rgb(141, 141, 195);
+   font-family: 'Sunflower';
+    
+     
+
+   }
+
+    .titimg{
+   float:left;
+   padding-left:20px;
+   width:900px;
+   height:425px;
+   }
+   
+  /*버튼*/
+   
+  
+.button1{
+  background:rgb(40, 40, 70);
+  color:#fff;
+  border:none;
+  position:relative;
+  height:50px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin-bottom:42px;
+  
+}
+/*여기 여행 어때요?*/
+.infoBest{
+position:absolute; 
+top:160%;  
+background-color:rgba(235, 230, 230, 0.938); 
+width:100%; 
+height:500px;
+margin-left:0;
+margin-right:0;
+z-index:2;
+
+ 
+}
+.BEST {
+position:relative;
+background-color:rgb(141, 141, 195);
+width:400px; 
+margin-left:1450px;
+height:500px;
+/*marign-top:0px;*/
+display:inline-block;
+
+
+z-index:1;
+
+}
+
+.youtube1{
+    
+    padding:60px;
+    position:absolute;
+    top:30px;
+    left:0%;
+   
+   
+
+}
+
+.youtube2{
+   
+    padding:60px;
+    position:absolute;
+    top:30px;
+    left:25%;
+   
+
+}
+
+
+.youtube3{
+   
+    padding:60px;
+    position:absolute;
+    top:30px;
+    left:50%;
+   
+
+}
+.fa-play-circle{
+  position:absolute;
+  top:35%;
+ left:40%;
+ color:rgba(219, 219, 25, 0.924);
+
+}
+
+
+.plangood {
+position:absolute;
+background-color:blue;
+z-index:1;
+top:130%;
+}
+
+
+/*여기 여행 어때요?*/
+.whatplan{
+   text-align:center;
+   font-size:40px;
+   padding-top:20px;
+  font-family: 'Poor Story';
+ 
+}
+.triptip{
+    
+    text-align:center;
+    font-size:25px;
+    font-family: 'Sunflower';
+}
+.button2{
+  background:rgb(40, 40, 70);
+  color:#fff;
+  border:none;
+  position:relative;
+  height:50px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  margin-left:30%;
+  
+}
+
+
+/*BEST 10 여행 추천지*/
+.scs1{
+      position:absolute;
+      top:220%;
+      width: 90%;
+      height:90%;
+      margin-left:5%;
+      
+   
+}
+.slider{
+    
+      width: 90%;
+     height:700px;
+      margin-left:5%;
+      
+   
+    }
+
+    .s1 {
+
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      
+      height:600px;
+    }
+
+    .BEST10{
+      text-align:center;
+      font-size:50px;
+      font-family: 'Poor Story';
+      margin-bottom:0px;
+     
+      
+    }
+    .imgtext{
+      position:absolute;
+      text-align:center;
+      font-size:40px;
+      color:white;
+      
+    }
+    
+
+/*BEST 여행 후기 */
+  .BestN1{
+position:absolute; 
+top:320%;  
+background-color:rgba(235, 230, 230, 0.938); 
+width:100%; 
+height:600px;
+margin-left:0;
+margin-right:0;
+z-index:2;
+
+ 
+}
+.BestN1tit {
+position:relative;
+background-color:rgb(141, 141, 195);
+width:400px; 
+margin-left:90px;
+height:600px;
+/*marign-top:0px;*/
+display:inline-block;
+
+
+z-index:1;
+
+}
+
+.Garland{
+    
+   
+    position:absolute;
+    top:0px;
+    
+   
+
+}
+
+.like{
+  position:absolute;
+
+  top:60%;
+  margin-left:300%;
+  
+   
+
+}
+
+.like1{
+  position:absolute;
+
+  top:58%;
+  margin-left:310%;
+  
+   
+
+}
+
+.love{
+  position:absolute;
+  top:60%;
+  margin-left:325%;
+  z-index:1;
+
+}
+.love1{
+  position:absolute;
+  top:58%;
+  margin-left:335%;
+  z-index:1;
+
+}
+
+
+.BESTN1Reviewtit{
+  position:absolute;
+  top:25%;
+  margin-left:700px;
+  width:200%;
+  
+   
+}
+
+.BESTN1Reviewtext{
+  position:absolute;
+ 
+    top:40%;
+    margin-left:700px;
+   
+    width:200%;
+    font-size:20px;
+   
+}
+.Reviewtit{
+  font-size:30px;
+}
+
+
+.browser{
+  position:absolute;
+  top:10%;
+  margin-left:160%;
+  width:800px;
+  height:500px;
+}
+
+/*HUMAN-PLAN과 여행을 떠나요!*/
+.humanplan{
+  position:relative;
+  top:20%;  
+  margin-left:4%
+
+}
+.humanplanimg1{
+  padding:60px;
+    position:absolute;
+    top:30px;
+    left:5%;
+}
+
+.humanplanimg2{
+  padding:60px;
+    position:absolute;
+    top:30px;
+    left:35%;
+}
+
+.humanplanimg3{
+  padding:60px;
+    position:absolute;
+    top:30px;
+    left:65%;
+}
+
+/*Human plan과 여행을 떠나요*/
+.humanplantit{
+  text-align:center;
+  font-size:50px;
+  font-family: 'Poor Story';
+}
+.humanplantext{
+position:absolute;
+top:40%;
+left:40%;
+font-size:30px;
+font-family: 'Jua', sans-serif;
+
+
+}
+
+/*마지막 바*/
+.lastnarvar{
+  position:relative;
+  width:100%;
+  height:300px;
+  top:120%;
+  background-color:rgb(70, 70, 129);
+
+}
+
+.narvar_ul{
+  display:flex;
+  list-style:none;
+  padding-left:20px;
+  margin-left:50px;
+  padding-top:20px;
+  color:white;
+}
+.narvar_li{
+  padding-left:10px;
+  font-size:20px;
+}
+.narvar_li1{
+  padding-left:10px;
+  font-size:20px;
+}
+.narvar_li2{
+  padding-left:10px;
+  font-size:20px;
+}
+.narvar_li3{
+  padding-left:10px;
+  font-size:20px;
+}
+.narvar_li4{
+  padding-left:10px;
+  font-size:20px;
+}
+.narvar_li5{
+  margin-left:42%
+}
+.narvar_li6{
+  margin-left:15px;
+}
+
+.pl{
+  position:absolute;
+  top:20px;
+  margin-left:44%;
+}
+.pl_li{
+  list-style:none;
+  font-size:15px;
+  color:rgba(255, 255, 255, 0.883);
+  text-decoration: none;
+}
+.pl_litit{
+  list-style:none;
+  font-size:15px;
+  color:rgba(255, 255, 255, 0.431);
+
+
+}
+.tl{
+  position:absolute;
+  top:20px;
+  margin-left:55%;
+
+}
+.ml{
+  display:flex;
+  list-style:none;
+  padding-left:20px;
+  margin-left:50px;
+  padding-top:10px;
+  color:white;
+
+}
+.ml_li{
+  padding-left:10px;
+  font-size:15px;
+}
+.la{
+  position: absolute;
+  top:85%;
+  margin-left:75%;
+  color:white;
+
+}
+
+
+
+
+
+
+
+
+
+
